@@ -1,0 +1,77 @@
+<!-- FILEPATH: /Users/jatinsethi/Documents/GitHub/JobFinder/Templates/home.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JobFinder</title>
+    <style>
+        /* CSS styles for the navbar */
+        .navbar {
+            background-color: #f8f8f8;
+            padding: 10px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* CSS styles for the sections */
+        .section {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f2f2f2;
+        }
+
+        .about-us {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .job-posting {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <span class="logo"> <h3>{{app_name}} </h3></span>
+        <img src="https://img.icons8.com/ios/50/000000/search--v1.png" alt="search" style="float: right;">
+       
+
+    </div>
+    <img src="https://images.pexels.com/photos/927451/pexels-photo-927451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="profile"  height="370px" width="600px" style="align-content: center;">
+
+    <div class="section">
+        <h2 class="about-us">About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue.</p>
+    </div>
+
+    <div class="section">
+        <h2 class="job-posting">Job Posting</h2>
+        <p>Here you can find the latest job postings.</p>
+        <p>
+            {% for job in jobs %}
+            <div>
+                <h3>{{job.title}}</h3>
+        
+                <div>
+                    <span>{{job.company}}</span>
+                    <span>{{job.location}}</span>
+                    <div>
+                        <span>Package :{{job.salary}}</span>
+                       
+                    </div>
+                  
+               </div> 
+                <p>{{job.description}}</p>
+            </div>
+               
+            {% endfor %}
+            
+          
+        </p>
+    </div>
+</body>
+</html>
