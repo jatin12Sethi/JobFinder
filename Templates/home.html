@@ -6,6 +6,16 @@
     <title>JobFinder</title>
     <style>
         /* CSS styles for the navbar */
+        .button {
+  border: none;
+  font-size: 12px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+background-color: #008CBA;/* Blue */
+}
         .navbar {
             background-color: #f8f8f8;
             padding: 10px;
@@ -54,20 +64,8 @@
         <p>
             {% for job in jobs %}
             <div>
-                <h3>{{job.title}}</h3>
-        
-                <div>
-                    <span>{{job.company}}</span>
-                    <span>{{job.location}}</span>
-                    <div>
-                        <span>Package :{{job.salary}}</span>
-                       
-                    </div>
-                  
-               </div> 
-                <p>{{job.description}}</p>
-            </div>
-               
+                <!-- including a jobs html file -->
+               {% include 'Jobs.html' %}
             {% endfor %}
             
           
