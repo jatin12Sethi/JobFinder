@@ -32,7 +32,7 @@ Jobs=[
 @app.route('/')
 
 def hello_world():
-    return render_template('home.html', jobs=Jobs,app_name='Job Board')
+    return render_template('home.html', jobs=Jobs,app_name='Job Search')
 
 #endpoint to list all jobs
 @app.route('/api/jobs')
